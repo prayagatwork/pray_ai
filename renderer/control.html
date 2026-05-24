@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="control.css">
+</head>
+<body>
+  <h1>Pray AI</h1>
+  <p class="subtitle">Real-time multimodal AI copilot with stealth overlay</p>
+
+  <div class="card">
+    <div class="card-title">API Configuration</div>
+    <label>OpenAI API Key</label>
+    <div class="row">
+      <input type="password" id="api-key-input" placeholder="sk-..." />
+      <button class="btn primary" id="save-key-btn">Save</button>
+    </div>
+    <div id="key-status"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Agent</div>
+    <label>Select an agent to customize AI behavior</label>
+    <div id="agent-grid" class="agent-grid"></div>
+
+    <div class="custom-agents-section">
+      <div class="custom-agents-header">
+        <span class="custom-agents-label">Custom Agents</span>
+        <button class="btn btn-small" id="toggle-agent-form-btn">+ Create</button>
+      </div>
+      <div id="custom-agent-list" class="custom-agent-list"></div>
+
+      <div id="agent-form" class="agent-form" style="display: none;">
+        <input type="text" id="agent-name-input" placeholder="Agent name" />
+        <input type="text" id="agent-desc-input" placeholder="Short description" />
+        <textarea id="agent-prompt-input" placeholder="System prompt — describe the agent's role, expertise, and how it should respond..."></textarea>
+        <div class="row">
+          <button class="btn primary btn-small" id="save-agent-btn">Save Agent</button>
+          <button class="btn btn-small" id="cancel-agent-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Audio Capture</div>
+    <div class="row">
+      <button class="btn success" id="start-mic-btn">Start Mic Recording</button>
+      <button class="btn danger" id="stop-mic-btn" disabled>Stop</button>
+      <span class="status-badge disconnected" id="mic-status">Inactive</span>
+    </div>
+    <div id="status-log"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Context (Optional)</div>
+    <label>Paste your resume, job description, or any reference material</label>
+    <textarea id="context-input" placeholder="Paste context here to help AI provide more relevant answers..."></textarea>
+    <button class="btn" id="save-context-btn">Save Context</button>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Screen Capture</div>
+    <div class="row">
+      <button class="btn" id="test-capture-btn">Test Screenshot</button>
+      <label style="display: flex; align-items: center; gap: 6px; margin: 0;">
+        <input type="checkbox" id="auto-capture-toggle" />
+        Auto-capture every
+        <input type="text" id="capture-interval" value="10" style="width: 40px; margin: 0;" />
+        seconds
+      </label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Keyboard Shortcuts</div>
+    <div class="shortcuts">
+      <kbd>Cmd+Shift+S</kbd> Take screenshot & analyze<br>
+      <kbd>Cmd+Shift+H</kbd> Toggle overlay visibility<br>
+      <kbd>Cmd+Shift+I</kbd> Toggle interactive mode (type in overlay)
+    </div>
+  </div>
+
+  <script src="control.js"></script>
+</body>
+</html>

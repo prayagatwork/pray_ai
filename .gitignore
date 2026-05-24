@@ -1,0 +1,8 @@
+node_modules/
+.env
+dist/
+*.log
+cursor_helper
+agents.json
+.DS_Store
+.claude/

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="overlay.css">
+</head>
+<body>
+  <div id="agent-indicator"></div>
+  <div id="mode-indicator">INTERACTIVE MODE (Cmd+Shift+I to exit)</div>
+
+  <div id="overlay-container">
+    <div id="transcript-panel" class="panel">
+      <div class="panel-header">
+        <span>Live Transcript</span>
+        <span class="status-dot" id="recording-dot"></span>
+      </div>
+      <div id="transcript-content">
+        <p style="color: rgba(255,255,255,0.3); font-style: italic;">Waiting for audio...</p>
+      </div>
+    </div>
+
+    <div id="ai-panel" class="panel">
+      <div class="panel-header">
+        <span>AI Response</span>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <button class="copy-btn" id="copy-all-btn" title="Copy full response">Copy All</button>
+          <span class="status-dot" id="ai-dot"></span>
+        </div>
+      </div>
+      <div id="ai-content">
+        <p style="color: rgba(255,255,255,0.3); font-style: italic;">Ready. Press Cmd+Shift+S to capture screen, or start speaking.</p>
+      </div>
+    </div>
+
+    <div id="input-bar">
+      <input type="text" id="manual-input" placeholder="Type a prompt... (Cmd+Shift+I for interactive mode)" />
+      <button class="btn" id="snapshot-btn" title="Take screenshot (Cmd+Shift+S)">Snap</button>
+      <button class="btn primary" id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="overlay.js"></script>
+</body>
+</html>
